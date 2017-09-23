@@ -2,7 +2,7 @@
 divisible by 3, 'Buzz' if it's divisible by 5, 'FizzBuzz' if it is divisible by
 15 and number itself otherwise.*/
 
-function fizzBuzz(num) {
+fizzBuzz = num => {
   for(let x=1; x<=num; x++) {
     if(x % 15 === 0) console.log('FizzBuzz');
      else if (x % 3 === 0) console.log('Fizz');
