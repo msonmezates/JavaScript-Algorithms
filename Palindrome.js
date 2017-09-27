@@ -13,3 +13,22 @@ isPalindrome = str => {
   if (lettersArr.join('') === lettersArr.reverse().join('')) return true;
   else return false;
 }
+
+
+//Another way to solve is using map and includes methods
+
+isPalindrome = str => {
+  str = str.toLowerCase();
+  let strArr = str.split('');
+  let charactersArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+  let newArr = [];
+  strArr.map(char => {
+    if(charactersArr.includes(char)) newArr.push(char);
+
+  });
+  if(newArr.join('') === newArr.reverse().join('')) return true;
+    else return false;
+}
+
+isPalindrome("Madam I'm Adam");
