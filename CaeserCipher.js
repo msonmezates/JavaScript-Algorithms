@@ -18,9 +18,10 @@ function caeserCipher(str, num) {
     if(newIndex > 25) newIndex = newIndex - 26; //make sure to stay in index 0(a) and 25(z)
     if(newIndex < 0) newIndex = 26 + newIndex;
 
-    newString += alphabetArray[newIndex]; //new string with shifted letters
+    if(str[i] === str[i].toUpperCase()) newString += alphabetArray[newIndex].toUpperCase();
+    else newString += alphabetArray[newIndex]; //new string with shifted letters
   }
   console.log(newString);
 }
 
-caeserCipher('ab',2); //cd
+caeserCipher('aB',2); //cD
