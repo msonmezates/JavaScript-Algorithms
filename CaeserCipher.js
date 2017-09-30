@@ -1,7 +1,5 @@
-/*write a function that takes a string and number such that each letter of a
-given text is replaced by a letter some fixed number of positions down the alphabet */
-
 function caeserCipher(str, num) {
+  num = num % 26; //in case if the number is too large e.g. 300!
   let lowerCaseString = str.toLowerCase();
   let alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.split(''); //alphabet array
 
@@ -21,7 +19,7 @@ function caeserCipher(str, num) {
     if(str[i] === str[i].toUpperCase()) newString += alphabetArray[newIndex].toUpperCase();
     else newString += alphabetArray[newIndex]; //new string with shifted letters
   }
-  console.log(newString);
+  return newString;
 }
 
-caeserCipher('aB',2); //cD
+caeserCipher('JavaScript',-900); //TkfkCmbszd
