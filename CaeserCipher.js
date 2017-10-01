@@ -22,4 +22,29 @@ function caeserCipher(str, num) {
   return newString;
 }
 
-caeserCipher('JavaScript',-900); //TkfkCmbszd
+caeserCipher('JavaScript',-900); //'TkfkCmbszd'
+
+//Alternative solution with map function
+
+caesarCipher = (str, num) => {
+num = num % 26;
+let lowerCaseString = str.toLowerCase().split('');
+let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+let newStr = '';
+
+lowerCaseString.map((letter,i) => {
+  let currentIndex = alphabet.indexOf(letter);
+  currentIndex += num;
+  if(currentIndex < 0) currentIndex = currentIndex + 26;
+  else if(currentIndex > 25) currentIndex = currentIndex - 26;
+
+  letter = alphabet[currentIndex];
+
+  if(str[i] === str[i].toUpperCase()) letter = letter.toUpperCase();
+
+  newStr += letter;
+});
+return newStr;
+}
+
+caesarCipher('JavaScript',-900); //'TkfkCmbszd'
