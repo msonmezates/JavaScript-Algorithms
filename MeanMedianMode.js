@@ -9,8 +9,19 @@ mean = arr => {
   return newNumber/arr.length;
 }
 
-meanMedianMode = arr => {
- return mean(arr);
+median = arr => {
+  for(let i=0; i<arr.length; i++) {
+    let newNumber = arr[i];
+    if(arr[i]>arr[i+1]) {
+      arr[i] = arr[i+1];
+      arr[i+1] = newNumber;
+    }
+  }
+  return arr;
 }
 
-meanMedianMode([3,1,1,2,4]); //11
+meanMedianMode = arr => {
+ return median(arr); //[1,1,2,3,4]
+}
+
+meanMedianMode([3,1,1,2,4]);
