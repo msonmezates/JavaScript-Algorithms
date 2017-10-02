@@ -10,7 +10,7 @@ mean = arr => {
 }
 
 meanMedianMode = arr => {
- return median(arr);
+ return mean(arr);
 }
 
 meanMedianMode([3,1,1,2,4]); //11
