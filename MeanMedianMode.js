@@ -3,9 +3,7 @@ and mode in an object */
 
 mean = arr => {
   let newNumber = 0;
-  for(let i=0; i<arr.length; i++) {
-    newNumber += arr[i];
-  }
+  arr.map(num => newNumber += num);
   return newNumber/arr.length;
 }
 
