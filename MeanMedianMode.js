@@ -1,6 +1,13 @@
 /* write a function that takes an array as an argument and return mean,median
 and mode in an object */
 
+meanMedianMode = arr => {
+ return {
+   mean: mean(arr),
+   median: median(arr)
+ };
+}
+
 mean = arr => {
   let newNumber = 0;
   arr.map(num => newNumber += num);
@@ -8,18 +15,11 @@ mean = arr => {
 }
 
 median = arr => {
-  for(let i=0; i<arr.length; i++) {
-    let newNumber = arr[i];
-    if(arr[i]>arr[i+1]) {
-      arr[i] = arr[i+1];
-      arr[i+1] = newNumber;
-    }
-  }
-  return arr;
-}
-
-meanMedianMode = arr => {
- return median(arr); //[1,1,2,3,4]
+  arr.sort((a,b) => a-b);
+  let median = 0;
+  if(arr.length % 2 === 1) median = arr[Math.floor(arr.length/2)];
+  else median = (arr[arr.length/2] + arr[(arr.length/2)-1]) / 2;
+  return median;
 }
 
 meanMedianMode([3,1,1,2,4]);
