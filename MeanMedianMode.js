@@ -18,17 +18,14 @@ mean = arr => {
 median = arr => {
   arr.sort((a,b) => a-b);
   let median = 0;
-  if(arr.length % 2 === 1) median = arr[Math.floor(arr.length/2)];
-  else median = (arr[arr.length/2] + arr[(arr.length/2)-1]) / 2;
+  (arr.length % 2 === 1) ? (median = arr[Math.floor(arr.length/2)]) : (median = (arr[arr.length/2] + arr[(arr.length/2)-1]) / 2);
   return median;
 }
 
 mode = arr => {
   let modeObj = {};
   arr.map(num => {
-    if(!modeObj[num]) {
-      modeObj[num] = 0;
-    }
+    if(!modeObj[num]) modeObj[num] = 0;
     modeObj[num]++;
   });
 
@@ -38,8 +35,7 @@ mode = arr => {
     if(modeObj[num] > maxFrequency) {
       modes = [num];
       maxFrequency = modeObj[num];
-    }
-    else if (modeObj[num] === maxFrequency) modes.push(num);
+    } else if (modeObj[num] === maxFrequency)[...modes, num];
   }
   // if every value appears same amount of times
   if (modes.length === Object.keys(modeObj).length) modes = [];
