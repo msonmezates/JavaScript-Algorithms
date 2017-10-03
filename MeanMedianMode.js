@@ -4,7 +4,8 @@ and mode in an object */
 meanMedianMode = arr => {
  return {
    mean: mean(arr),
-   median: median(arr)
+   median: median(arr),
+   mode: mode(arr),
  };
 }
 
@@ -20,6 +21,29 @@ median = arr => {
   if(arr.length % 2 === 1) median = arr[Math.floor(arr.length/2)];
   else median = (arr[arr.length/2] + arr[(arr.length/2)-1]) / 2;
   return median;
+}
+
+mode = arr => {
+  let modeObj = {};
+  arr.map(num => {
+    if(!modeObj[num]) {
+      modeObj[num] = 0;
+    }
+    modeObj[num]++;
+  });
+
+  let maxFrequency = 0; //how often the current mode shows up
+  let modeArr = [];
+  for(let num in modeObj) {
+    if(modeObj[num] > maxFrequency) {
+      modes = [num];
+      maxFrequency = modeObj[num];
+    }
+    else if (modeObj[num] === maxFrequency) modes.push(num);
+  }
+  // if every value appears same amount of times
+  if (modes.length === Object.keys(modeObj).length) modes = [];
+  return modes;
 }
 
 meanMedianMode([3,1,1,2,4]);
