@@ -33,9 +33,9 @@ mode = arr => {
   let modeArr = [];
   for(let num in modeObj) {
     if(modeObj[num] > maxFrequency) {
-      modes = [num];
+      modeArr = [num];
       maxFrequency = modeObj[num];
-    } else if (modeObj[num] === maxFrequency)[...modes, num];
+    } else if (modeObj[num] === maxFrequency) modeArr.push(num);
   }
   // if every value appears same amount of times
   if (modes.length === Object.keys(modeObj).length) modes = [];
