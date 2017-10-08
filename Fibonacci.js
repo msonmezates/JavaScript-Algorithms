@@ -2,7 +2,8 @@
 return that number in the position */
 
 fibonacci = position => {
-
+  if (position < 3) return 1; //base case
+  else return fibonacci(position-1) + fibonacci(position-2); //recursive case
 }
 
 //Testing
