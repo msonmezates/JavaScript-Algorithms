@@ -10,14 +10,17 @@ sieveOfEratosthenes = num => {
   primes[0] = false;
   primes[1] = false;
 
-  for(let i=2; i <= Math.sqrt(num); i++) { // outer loop provides optimization so that we don't                                          // have to loop through each number in the array
+  for(let i=2; i <= Math.sqrt(num); i++) { // outer loop provides optimization so that we don't
+    console.log('Outer loop, i: ', i);      // have to loop through each number in the array
     for(let j=2; j*i <= num; j++ ) {
-      primes[i*j] = false;
+      console.log('inner loop j*i is: ', j*i);
+      primes[i*j] = false;    //automatically sets to false for nonprime numbers
     }
   }
 
   let result = [];
   for(let i=0; i<primes.length; i++) {
+    console.log('primes[i] is: ', primes[i]); //check true/false condition
     if(primes[i]) result.push(i);
   }
   return result;
