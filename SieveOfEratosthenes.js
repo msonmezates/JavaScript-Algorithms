@@ -2,6 +2,9 @@
 numbers up to number in an array */
 
 sieveOfEratosthenes = num => {
+
+  if(num < 2) return 'Please enter a valid number'; //consider negative numbers
+
   let primes = [];
   for(let i=0; i<=num; i++) {
     primes[i] = true;         //set each array element to true;
