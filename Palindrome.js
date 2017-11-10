@@ -35,7 +35,7 @@ isPalindrome("Madam I'm Adam");
 
 //Another way to solve for a word
 isPalindrome = str => {
-  var i, len = str.length;
+  let i, len = str.length;
   for(i =0; i<len/2; i++){
     if (str[i]!== str[len -1 -i])
        return false;
@@ -53,5 +53,3 @@ isPalindrome = str => {
 
 isPalindrome('madam'); //true
 isPalindrome("Madam I'm Adam"); //false bc of '
-
-  

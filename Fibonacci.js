@@ -13,11 +13,11 @@ fibonacci(9); //returns 34
 //Alternate solution
 
 fibonacci = n => {
-  var fibo = [0, 1];
+  let fibo = [0, 1];
 
   if (n <= 2) return 1;
 
-  for (var i = 2; i <=n; i++ ){
+  for (let i = 2; i <=n; i++ ){
    fibo[i] = fibo[i-1]+fibo[i-2];
   }
 
