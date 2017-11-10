@@ -10,7 +10,7 @@ reverseWords = str => {
       let currentLetter = word[i];
       newWord += currentLetter;
     }
-    [...newArr, newWord];
+    newArr.push(newWord);
   });
   return newArr.join(' ');
 }
