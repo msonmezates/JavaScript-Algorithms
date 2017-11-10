@@ -45,3 +45,13 @@ isPalindrome = str => {
 
 isPalindrome('madam'); //true
 isPalindrome("Madam I'm Adam"); //false bc of '
+
+//Another way to solve by using build in method
+isPalindrome = str => {
+    return str == str.split('').reverse().join('');
+}
+
+isPalindrome('madam'); //true
+isPalindrome("Madam I'm Adam"); //false bc of '
+
+  
